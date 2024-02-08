@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+
+    <form id="loginForm" onsubmit="authenticateUser()">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <script>
+        function authenticateUser() {
+            // Replace these with actual credentials
+            const validEmail = "pranjal.ai.arena@gmail.com";
+            const validPassword = "passwd123";
+
+            // Get user input
+            const enteredEmail = document.getElementById("email").value;
+            const enteredPassword = document.getElementById("password").value;
+
+            // Check if credentials match
+            if (enteredEmail === validEmail && enteredPassword === validPassword) {
+                window.location.href = "dex.html"; // Redirect to index.html
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+
+            // Prevent form submission (this is important to avoid default form behavior)
+            event.preventDefault();
+        }
+    </script>
+
+</body>
+</html>
