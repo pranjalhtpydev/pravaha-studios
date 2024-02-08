@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Vfx and film making studios">
+    <meta name="keywords" content="film making, vfx, cgi">
+    <meta name="author" content="film making">
+    <title>Pravaha Studios</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata&display=swap">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #232323;
+            color: #cdcdcd;
+            font-family: "Avenir Next", "Avenir", sans-serif;
+        }
+
+        #menuToggle {
+            display: block;
+            position: relative;
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        #menuToggle a {
+            text-decoration: none;
+            color: #232323;
+            transition: color 0.3s ease;
+        }
+
+        #menuToggle a:hover {
+            color: tomato;
+        }
+
+        #menuToggle input {
+            display: block;
+            width: 40px;
+            height: 32px;
+            position: absolute;
+            top: -7px;
+            left: -5px;
+            cursor: pointer;
+            opacity: 0;
+            z-index: 2;
+            -webkit-touch-callout: none;
+        }
+
+        #menuToggle span {
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+            background: #cdcdcd;
+            border-radius: 3px;
+            z-index: 1;
+            transform-origin: 4px 0px;
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        opacity 0.55s ease;
+        }
+
+        #menuToggle span:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        #menuToggle span:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+
+        #menuToggle input:checked ~ span {
+            opacity: 1;
+            transform: rotate(45deg) translate(-2px, -1px);
+            background: #232323;
+        }
+
+        #menuToggle input:checked ~ span:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+
+        #menuToggle input:checked ~ span:nth-last-child(2) {
+            transform: rotate(-45deg) translate(0, -1px);
+        }
+
+        #menu {
+            position: absolute;
+            width: 300px;
+            margin: -100px 0 0 -50px;
+            padding: 50px;
+            padding-top: 125px;
+            background: #ededed;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        }
+
+        #menu li {
+            padding: 10px 0;
+            font-size: 22px;
+        }
+
+        #menuToggle input:checked ~ ul {
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <a href="#"><li>Home</li></a>
+                <a href="about.html"><li>About</li></a>
+                <a href="services.html"><li>Service</li></a>
+                <a href="update.html"><li>Updates</li></a>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Pravaha</span> Studios</h1>
+            </div>
+<!--             <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Service</a></li>
+                    <l1><a href="update.html">Updates</a>
+                    </l1>
+                </ul>
+            </nav> -->
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>VFX & FILM MAKING STUDIOS</h1>
+            <p>Pravaha Studios emerges as a formidable contender in the film industry, distinguished by its unwavering commitment to cinematic excellence. With a distinctive focus on film categories U, UA, and A, we aim to redefine storytelling, offering audiences a refined and captivating cinematic experience. Anticipate a new standard in entertainment with Pravaha Studios.</p>
+        </div>
+    </section>
+
+    <section id="newsletter">
+        <div class="container">
+            <h1>Subscribe To Our Newsletter</h1>
+            <!-- Web3form for subscription -->
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="a9aa5d1e-4e9a-494f-b27b-5becea3846fc">
+                <input type="email" name="email" placeholder="Enter Email..." required>
+                <button type="submit" class="button_1">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="boxes">
+        <div class="container">
+            <div class="box">
+                <img src="./img/6263767_3236267.jpg" alt="Story Writing Image">
+                <h3>Story Writing</h3>
+                <p>Pravaha Studios crafts unforgettable narratives that transcend, leaving a lasting impact on the cinematic landscape.</p>
+            </div>
+            <div class="box">
+                <img src="./img/7140766_3528476.jpg" alt="Budget Shooting Style Image">
+                <h3>Budget Shooting Style</h3>
+                <p>Pravaha Studios redefines film excellence on a budget, blending style and cost-effectiveness seamlessly.</p>
+            </div>
+            <div class="box">
+                <img src="./img/clapperboard-311792.svg" alt="Experience Image">
+                <h3>Experience</h3>
+                <p>Pravaha Studios: Elevating film experiences with masterful storytelling and immersive visuals.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Pravaha Studios, Copyright &copy; 2024</p>
+    </footer>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+</body>
+</html>

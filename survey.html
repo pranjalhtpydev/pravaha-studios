@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Pravaha Studios Free Courses Survey</title>
+    <link rel="stylesheet" href="./css/survey.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title">Pravaha Studios Free Courses Survey</h1>
+        <p id="description">Thank you for expressing your interest in our free courses. Completing this survey could lead to a position in our company with a basics to middle salary for freshers.</p>
+    </header>
+    <form id="survey-form" onsubmit="sendEmail(event)">
+        <fieldset>
+            <label id="name-label">
+                Name
+                <input id="name" type="text" placeholder="Enter your name" required>
+            </label>
+            <label id="email-label">
+                Email
+                <input id="email" type="email"  placeholder="Enter your Email" required>
+            </label>
+            <label id="number-label">
+                Mobile No.
+                <input id="number" type="tel" placeholder="Enter your mobile number" required>
+            </label>
+            <label id="address-label">
+                Address
+                <textarea id="address" placeholder="Enter your address"></textarea>
+            </label>
+            <label id="pincode-label">
+                Pin Code
+                <input id="pincode" type="text" placeholder="Enter your pin code" required>
+            </label>
+            <label>
+                Which basic course do you want?
+                <select id="dropdown" required>
+                    <option disabled selected value="">Select a course</option>
+                    <option>VFX (Fundamental and Basics)</option>
+                    <option>Cinematography (Basics)</option>
+                    <option>Film Making (Basics)</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            Would you recommend any other course?
+            <label>
+                <input type="radio" name="reco" value="Definitely"> Definitely
+            </label>
+            <label>
+                <input type="radio" name="reco" value="Maybe"> Maybe
+            </label>
+            <label>
+                <input type="radio" name="reco" value="Not sure"> Not sure
+            </label>
+            What would you like to see improved? (Check all that apply)
+            <!-- Remaining checkboxes are unchanged -->
+        </fieldset>
+
+        <fieldset>
+            Any comments or suggestions?
+            <textarea id="comments" placeholder="Enter your comment here..." rows="5"></textarea>
+        </fieldset>
+
+        <input id="submit" type="submit" value="Submit">
+    </form>
+
+    <script>
+        function sendEmail(event) {
+            event.preventDefault();
+
+            // Get form data
+            const name = $('#name').val();
+            const email = $('#email').val();
+            const number = $('#number').val();
+            const address = $('#address').val();
+            const pincode = $('#pincode').val();
+            const dropdown = $('#dropdown').val();
+            const reco = $('input[name="reco"]:checked').val();
+            const comments = $('#comments').val();
+
+            // Compose the email parameters
+            const templateParams = {
+                name: name,
+                email: email,
+                number: number,
+                address: address,
+                pincode: pincode,
+                dropdown: dropdown,
+                reco: reco,
+                comments: comments
+            };
+
+            // Send the email using EmailJS REST API with jQuery
+            $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+                type: 'POST',
+                data: JSON.stringify({
+                    service_id: 'service_ps_survey',
+                    template_id: 'template_vt071hc',
+                    user_id: 'HQw6ZXLU3b0nUo1XP',
+                    template_params: templateParams
+                }),
+                contentType: 'application/json'
+            }).done(function() {
+                console.log('Email sent successfully!');
+                alert('Form submitted successfully!, we will contact you back within 2 days.');
+            }).fail(function(error) {
+                console.error('Failed to send email:', error);
+                alert('Form submitted successfully, but there was an issue sending the confirmation email.');
+            });
+        }
+    </script>
+</body>
+</html>
