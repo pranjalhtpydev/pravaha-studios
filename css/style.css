@@ -1,1 +1,181 @@
+/* Import a modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+/* Header Styles */
+header {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 20px 0;
+  border-bottom: 3px solid #3498db;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
+
+#branding h1 {
+  margin: 0;
+  font-size: 3em;
+  font-weight: 700;
+  color: #3498db;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #3498db;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+/* Showcase Styles */
+#showcase {
+  min-height: 500px;
+  background: #3498db url('../img/showcase.jpg') no-repeat center/cover;
+  text-align: center;
+  color: #fff;
+  padding: 120px 0;
+}
+
+#showcase h1 {
+  font-size: 4em;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+#showcase p {
+  font-size: 1.4em;
+  font-weight: 400;
+}
+
+/* Boxes Styles */
+#boxes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.box {
+  flex: 0 0 30%;
+  text-align: center;
+  padding: 40px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.box img {
+  width: 120px;
+  border-radius: 50%;
+}
+
+/* Newsletter Styles */
+#newsletter {
+  padding: 30px;
+  color: #fff;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+#newsletter h1 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #3498db;
+}
+
+#newsletter form {
+  float: right;
+  margin-top: 20px;
+}
+
+#newsletter input[type="email"] {
+  padding: 15px;
+  height: 50px;
+  width: 300px;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+}
+
+.button_1 {
+  height: 50px;
+  background: #3498db;
+  border: 0;
+  padding: 0 40px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+}
+
+.button_1:hover {
+  background: #2980b9;
+}
+
+/* Footer Styles */
+footer {
+  padding: 40px;
+  margin-top: 60px;
+  color: #fff;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  header, nav, #newsletter h1, #newsletter form, #boxes .box {
+    flex: 0 0 100%;
+    text-align: center;
+    width: 100%;
+  }
+
+  header {
+    padding-bottom: 40px;
+  }
+
+  #showcase h1 {
+    margin-top: 80px;
+  }
+
+  #newsletter button {
+    display: block;
+    width: 100%;
+  }
+
+  #newsletter form input[type="email"] {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

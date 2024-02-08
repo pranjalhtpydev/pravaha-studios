@@ -1,0 +1,76 @@
+/* file: survey.css */
+body {
+  background-color: #f2f2f2; /* Light gray background */
+  color: #333; /* Blackish gray text color */
+  font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* IBM Plex Sans font */
+  margin: 0;
+}
+
+#title {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333; /* Blackish gray text color */
+}
+
+#description {
+  margin-top: 0;
+  text-align: center;
+  font-style: italic;
+  color: #666; /* Dark gray text color */
+}
+
+#survey-form {
+  width: 80%;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #fff; /* White background */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+}
+
+fieldset {
+  border: none;
+  width: 100%;
+  padding: 15px 0;
+}
+
+label,
+fieldset:first-child input,
+select,
+#submit {
+  display: block;
+  width: 100%;
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+textarea {
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+#submit {
+  width: 100%;
+  background-color: #55acee; /* Twitter blue button background color */
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  color: #fff; /* White text color */
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #2795e9; /* Darker blue on hover */
+}
